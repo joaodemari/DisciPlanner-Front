@@ -1,0 +1,8 @@
+<div class="grid grid-cols-6 w-full text-center">
+  @for (item of weekDays; track $index) {
+    <div class="p-2 border w-full h-10 xl:text-sm text-xs font-bold">
+      <span class="xl:block lg:block w-full md:block sm:block hidden">{{ item }}</span>
+      <span class="xl:hidden w-full lg:hidden md:hidden sm:hidden block">{{ item }}</span>
+    </div>
+  }
+</div>

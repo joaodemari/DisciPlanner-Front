@@ -1,0 +1,18 @@
+<div class="parent-container relative h-full w-full">
+  @if (grade$ | async; as grade) {
+    <div class="grid grid-cols-6 z-0 absolute inset-0 h-full w-full">
+      @for (periodo of grade.periodosFaculdade; track $index) {
+        @for (dia of dias; track $index) {
+          <!-- <app-grade-body-empty-ceil></app-grade-body-empty-ceil> -->
+          <div class="border w-full font-bold h-full"></div>
+        }
+      }
+    </div>
+
+    <div class="grid grid-cols-6 grid-rows-6 absolute inset-0 z-10 w-full">
+      <ng-container *ngFor="let turma of grade.blocosTurma">
+        <app-grade-body-ceil [ngStyle]="getDynamicStyles(turma)" [ceilData]="turma"> </app-grade-body-ceil>
+      </ng-container>
+    </div>
+  }
+</div>

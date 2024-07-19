@@ -1,0 +1,13 @@
+<div class="p-2 border w-full h-10 xl:text-sm text-xs font-bold">
+  <span class="xl:block lg:block w-full md:block sm:block hidden">Dia / Horário</span>
+  <span class="xl:hidden w-full lg:hidden md:hidden sm:hidden block">Dia</span>
+</div>
+<div class="h-full flex flex-col w-28">
+  @for (item of linhaperiodos; track $index) {
+    <div class="p-2 border w-full h-full xl:text-sm text-xs text-center">
+      <span class="w-full block font-semibold">{{ item.customizedLabel }}</span>
+
+      <span class="block w-full">{{ item.label }}</span>
+    </div>
+  }
+</div>
